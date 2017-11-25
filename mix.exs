@@ -4,7 +4,7 @@ defmodule JpKatsuYou.Mixfile do
   def project() do
     [
       app: :jp_katsuyou,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.5",
       name: "JpKatsuyou",
       description: description(),
@@ -14,7 +14,7 @@ defmodule JpKatsuYou.Mixfile do
     ]
   end
 
-  def application do 
+  def application do
     []
   end
 
@@ -27,7 +27,7 @@ defmodule JpKatsuYou.Mixfile do
   defp description() do
     "A library that provide some utility for japanese langauge conjugation."
   end
- 
+
   defp package() do
 
     [
