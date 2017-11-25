@@ -7,7 +7,7 @@ defmodule JpKatsuYou.Mixfile do
       version: "0.1.0",
       elixir: "~> 1.5",
       name: "JpKatsuyou",
-      description: @description,
+      description: description(),
       package: package(),
       deps: deps(),
       source_url: "https://github.com/swarut/jp_katsuyou"
