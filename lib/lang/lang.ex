@@ -2,11 +2,6 @@ defmodule JpKatsuyou.Lang do
   @moduledoc """
   Provides japanese language helper functions.
 
-  ## Examples
-
-      iex> Math.sum(1, 2)
-      3
-
   """
 
   defmacro __using__(_) do
@@ -52,6 +47,7 @@ defmodule JpKatsuyou.Lang do
 
       @doc """
       Transform the character to a specific column
+
         - from : a string for the original character
         - to : an atom of column name (in english)
       ## Example
@@ -62,7 +58,16 @@ defmodule JpKatsuyou.Lang do
         row_name = @hira_columns[String.to_atom(from)]
         @hira_rows[row_name][to]
       end
+      
+      @doc """
+      Transform a suffix character to a specific column
 
+      - word : a string of japanese word
+      - to : an atom of column name (in english)
+      ## Example
+          iex> Lang.shift("話す", :i)
+          話し
+      """
       def shift_suffix(word, to) do
         last = String.last(word)
         String.replace_suffix(word, last, shift(last, to))
