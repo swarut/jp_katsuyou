@@ -58,7 +58,7 @@ defmodule JpKatsuyou.Lang do
         row_name = @hira_columns[String.to_atom(from)]
         @hira_rows[row_name][to]
       end
-      
+
       @doc """
       Transform a suffix character to a specific column
 
@@ -72,7 +72,7 @@ defmodule JpKatsuyou.Lang do
         last = String.last(word)
         String.replace_suffix(word, last, shift(last, to))
       end
-      
+
     end
   end
 
