@@ -25,7 +25,7 @@ defmodule JpKatsuYou.Mixfile do
   end
 
   defp description() do
-    "A library that provide some utility for japanese langauge conjugation."
+    "A library that provide some utility for japanese language conjugation."
   end
 
   defp package() do
