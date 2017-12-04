@@ -4,7 +4,7 @@ defmodule JpKatsuYou.Mixfile do
   def project() do
     [
       app: :jp_katsuyou,
-      version: "0.1.1",
+      version: "0.1.2",
       elixir: "~> 1.5",
       name: "JpKatsuyou",
       description: description(),
