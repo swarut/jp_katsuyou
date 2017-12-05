@@ -17,7 +17,8 @@ defmodule JpKatsuyou.Verb do
     "返る" => true,
     "帰る" => true,
     "滑る" => true,
-    "蹴る" => true
+    "蹴る" => true,
+    "成る" => true
   }
 
   @doc """
