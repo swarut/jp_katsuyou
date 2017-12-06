@@ -39,6 +39,12 @@ defmodule JpKatsuyouTest.Verb do
       assert Verb.is_godan?("見える") == false
     end
 
+    test "polite_present/2 returns correct polite present conjugation" do
+      assert Verb.polite_present(%{verb: "する", kumi: "irregular"}) == "しる"
+      assert Verb.polite_present(%{verb: "食べる", kumi: "ichidan"}) == "食べます"
+      assert Verb.polite_present(%{verb: "話す", kumi: "godan"}) == "話します"
+    end
+
 
   end
 end
