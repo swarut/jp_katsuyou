@@ -1,4 +1,5 @@
 defmodule JpKatsuyou.Verb.Dict do
+
   defmacro __using__(_) do
     quote do
 
@@ -13,16 +14,13 @@ defmodule JpKatsuyou.Verb.Dict do
       end
 
       def dic_present(%{kumi: "ichidan", verb: verb}) do
-        IO.puts("dic past #{verb}")
+        verb
       end
       def dic_present(%{kumi: "godan", verb: verb}) do
-        IO.puts("dic past #{verb}")
+        verb
       end
       def dic_present(%{kumi: "irregular", verb: verb}) do
-        IO.puts("dic past #{verb}")
-      end
-
-      def dic_present do
+        verb
       end
 
     end
