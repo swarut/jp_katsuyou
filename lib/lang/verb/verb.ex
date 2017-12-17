@@ -4,7 +4,6 @@ defmodule JpKatsuyou.Verb do
 
   """
 
-  # use JpKatsuyou.Verb.Polite
   use JpKatsuyou.Verb.Dict
   use JpKatsuyou.Verb.Polite
 

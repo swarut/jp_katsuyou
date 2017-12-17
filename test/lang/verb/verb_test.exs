@@ -45,6 +45,13 @@ defmodule JpKatsuyouTest.Verb do
       assert Verb.polite_present(%{verb: "話す", kumi: "godan"}) == "話します"
     end
 
+    test "dic_order/1 returns order form of a verb" do
+      assert Verb.dic_order(%{verb: "話す", kumi: "ichidan"}) == "話せ"
+      assert Verb.dic_order(%{verb: "食べる", kumi: "godan"}) == "食べろ"
+      assert Verb.dic_order(%{verb: "する", kumi: "irregular"}) == "しろ"
+      assert Verb.dic_order(%{verb: "来る", kumi: "irregular"}) == "来い"
+    end
+
 
   end
 end
