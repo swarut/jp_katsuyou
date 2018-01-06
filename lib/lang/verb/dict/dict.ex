@@ -25,11 +25,11 @@ defmodule JpKatsuyou.Verb.Dict do
 
       def dic_order(%{kumi: "ichidan", verb: verb}) do
         verb
-        |> JpKatsuyou.Lang.shift_suffix(:e) 
+        |> JpKatsuyou.Lang.shift_suffix(:o)
       end
       def dic_order(%{kumi: "godan", verb: verb}) do
         verb
-        |> JpKatsuyou.Lang.shift_suffix(:o)
+        |> JpKatsuyou.Lang.shift_suffix(:e)
       end
       def dic_order(%{kumi: "irregular", verb: verb}) do
         case verb do
@@ -37,6 +37,7 @@ defmodule JpKatsuyou.Verb.Dict do
           "来る" -> "来い"
         end
       end
+      defdelegate dic_imperative(map), to: __MODULE__, as: :dic_order
 
     end
   end

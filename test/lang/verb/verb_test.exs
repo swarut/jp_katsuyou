@@ -46,10 +46,17 @@ defmodule JpKatsuyouTest.Verb do
     end
 
     test "dic_order/1 returns order form of a verb" do
-      assert Verb.dic_order(%{verb: "話す", kumi: "ichidan"}) == "話せ"
-      assert Verb.dic_order(%{verb: "食べる", kumi: "godan"}) == "食べろ"
+      assert Verb.dic_order(%{verb: "話す", kumi: "godan"}) == "話せ"
+      assert Verb.dic_order(%{verb: "食べる", kumi: "ichidan"}) == "食べろ"
       assert Verb.dic_order(%{verb: "する", kumi: "irregular"}) == "しろ"
       assert Verb.dic_order(%{verb: "来る", kumi: "irregular"}) == "来い"
+    end
+
+    test "dic_imperative/1 returns order form of a verb" do
+      assert Verb.dic_imperative(%{verb: "話す", kumi: "godan"}) == "話せ"
+      assert Verb.dic_imperative(%{verb: "食べる", kumi: "ichidan"}) == "食べろ"
+      assert Verb.dic_imperative(%{verb: "する", kumi: "irregular"}) == "しろ"
+      assert Verb.dic_imperative(%{verb: "来る", kumi: "irregular"}) == "来い"
     end
 
 
