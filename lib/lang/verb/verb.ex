@@ -53,4 +53,24 @@ defmodule JpKatsuyou.Verb do
     !is_irregular?(verb) && !is_godan?(verb) && String.ends_with?(verb, "る")
   end
 
+  @doc """
+  List all possible conjugations.
+
+  ## Example
+      iex> Verb.all_conjugations()
+  """
+  def all_conjugations() do
+    %{
+      dic: [
+        "past",
+        "present",
+        "order"
+      ],
+      polite: [
+        "past",
+        "present"
+      ]
+    }
+  end
+
 end
