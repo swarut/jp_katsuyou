@@ -68,7 +68,8 @@ defmodule JpKatsuyou.Verb do
       ],
       polite: [
         "past",
-        "present"
+        "present",
+        "order"
       ]
     }
   end
