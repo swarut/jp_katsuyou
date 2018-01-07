@@ -1,5 +1,7 @@
 defmodule JpKatsuyou.Verb.Polite do
 
+  alias JpKatsuyou.Lang
+
   defmacro __using__(_) do
     quote do
 
@@ -19,7 +21,7 @@ defmodule JpKatsuyou.Verb.Polite do
       end
       def polite_present(%{kumi: "godan", verb: verb}) do
         verb
-        |> JpKatsuyou.Lang.shift_suffix(:i)
+        |> Lang.shift_suffix(:i)
         |> String.replace_suffix("", "ます")
       end
       def polite_present(%{kumi: "irregular", verb: verb}) do
@@ -35,7 +37,7 @@ defmodule JpKatsuyou.Verb.Polite do
       end
       def polite_order(%{kumi: "godan", verb: verb}) do
         verb
-        |> JpKatsuyou.Lang.shift_suffix(:i)
+        |> Lang.shift_suffix(:i)
         |> String.replace_suffix("", "なさい")
 
       end
