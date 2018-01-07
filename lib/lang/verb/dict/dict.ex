@@ -63,6 +63,22 @@ defmodule JpKatsuyou.Verb.Dict do
       end
       defdelegate dic_imperative(map), to: __MODULE__, as: :dic_order
 
+      def dic_conditional(%{kumi: "ichidan", verb: verb}) do
+        verb
+        |> String.replace_suffix("る", "れば")
+      end
+      def dic_conditional(%{kumi: "godan", verb: verb}) do
+        verb
+        |> Lang.shift_suffix(:e)
+        |> String.replace_suffix("", "ば")
+      end
+      def dic_conditional(%{kumi: "irregular", verb: verb}) do
+        case verb do
+          "する" -> "すれば"
+          "来る" -> "来れば"
+        end
+      end
+
     end
   end
 end

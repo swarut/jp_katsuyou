@@ -39,5 +39,12 @@ defmodule JpKatsuyouTest.Verb.Dict do
       assert Verb.dic_imperative(%{kumi: "irregular", verb: "来る"}) == "来い"
     end
 
+    test "dic_conditional/1 returns conditional form of a verb" do
+      assert Verb.dic_conditional(%{kumi: "ichidan", verb: "食べる"}) == "食べれば"
+      assert Verb.dic_conditional(%{kumi: "godan", verb: "話す"}) == "話せば"
+      assert Verb.dic_conditional(%{kumi: "irregular", verb: "する"}) == "すれば"
+      assert Verb.dic_conditional(%{kumi: "irregular", verb: "来る"}) == "来れば"
+    end
+
   end
 end
