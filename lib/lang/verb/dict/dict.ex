@@ -32,13 +32,19 @@ defmodule JpKatsuyou.Verb.Dict do
       end
 
       def dic_past(%{kumi: "ichidan", verb: verb}) do
-        IO.puts("dic past #{verb}")
+        verb
+        |> String.replace_suffix("る", "た")
       end
       def dic_past(%{kumi: "godan", verb: verb}) do
-        IO.puts("dic past #{verb}")
+        verb
+        |> Lang.shift_suffix(:i)
+        |> String.replace_suffix("", "た")
       end
       def dic_past(%{kumi: "irregular", verb: verb}) do
-        IO.puts("dic past #{verb}")
+        case verb do
+          "する" -> "した"
+          "来る" -> "来た"
+        end
       end
 
       def dic_order(%{kumi: "ichidan", verb: verb}) do
