@@ -13,6 +13,9 @@ defmodule JpKatsuyouTest.Verb.Dict do
 
     test "dic_present_negative/1 returns the present negative form of a verb" do
       assert Verb.dic_present_negative(%{kumi: "ichidan", verb: "食べる"}) == "食べない"
+      assert Verb.dic_present_negative(%{kumi: "godan", verb: "会う"}) == "会わない"
+      assert Verb.dic_present_negative(%{kumi: "godan", verb: "買う"}) == "買わない"
+      assert Verb.dic_present_negative(%{kumi: "godan", verb: "聞く"}) == "聞かない"
       assert Verb.dic_present_negative(%{kumi: "godan", verb: "話す"}) == "話さない"
       assert Verb.dic_present_negative(%{kumi: "irregular", verb: "する"}) == "しない"
       assert Verb.dic_present_negative(%{kumi: "irregular", verb: "来る"}) == "来ない"

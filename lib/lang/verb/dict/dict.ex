@@ -20,9 +20,15 @@ defmodule JpKatsuyou.Verb.Dict do
         |> String.replace_suffix("る", "ない")
       end
       def dic_present_negative(%{kumi: "godan", verb: verb}) do
-        verb
-        |> Lang.shift_suffix(:a)
-        |> String.replace_suffix("", "ない")
+        case String.ends_with?(verb, "う") do
+          true ->
+            verb
+            |> String.replace_suffix("う", "わない")
+          false ->
+            verb
+            |> Lang.shift_suffix(:a)
+            |> String.replace_suffix("", "ない")
+        end
       end
       def dic_present_negative(%{kumi: "irregular", verb: verb}) do
         case verb do
@@ -79,7 +85,7 @@ defmodule JpKatsuyou.Verb.Dict do
         end
       end
 
-      def dic_conditional_negative(%{verb: verb}) do
+      def dic_conditional_negative(verb) do
         verb
         |> dic_present_negative
         |> String.replace_suffix("い", "ければ")
