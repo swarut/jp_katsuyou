@@ -46,5 +46,12 @@ defmodule JpKatsuyouTest.Verb.Dict do
       assert Verb.dic_conditional(%{kumi: "irregular", verb: "来る"}) == "来れば"
     end
 
+    test "dic_conditional_negative/1 returns conditional form of a verb" do
+      assert Verb.dic_conditional_negative(%{kumi: "ichidan", verb: "食べる"}) == "食べなければ"
+      assert Verb.dic_conditional_negative(%{kumi: "godan", verb: "話す"}) == "話さなければ"
+      assert Verb.dic_conditional_negative(%{kumi: "irregular", verb: "する"}) == "しなければ"
+      assert Verb.dic_conditional_negative(%{kumi: "irregular", verb: "来る"}) == "来なければ"
+    end
+
   end
 end

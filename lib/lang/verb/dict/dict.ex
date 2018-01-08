@@ -79,6 +79,12 @@ defmodule JpKatsuyou.Verb.Dict do
         end
       end
 
+      def dic_conditional_negative(%{verb: verb}) do
+        verb
+        |> dic_present_negative
+        |> String.replace_suffix("い", "ければ")
+      end
+
     end
   end
 end
