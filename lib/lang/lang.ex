@@ -71,6 +71,20 @@ defmodule JpKatsuyou.Lang do
     String.replace_suffix(word, last, shift(last, to))
   end
 
+  @doc """
+  Transform a suffix character to a specific column then change row
+
+  - word : a string of japanese word
+  - to : an atom of column name (in english)
+  - row :
+  ## Example
+      iex> Lang.shift("話す", :i)
+      話し
+  """
+  def shift_suffix_and_change_row(word, to, row) do
+
+  end
+
 
 
 end
