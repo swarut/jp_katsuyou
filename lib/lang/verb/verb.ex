@@ -63,6 +63,7 @@ defmodule JpKatsuyou.Verb do
     %{
       dic: [
         "past",
+        "pass_negative",
         "present",
         "present_negative",
         "order",
