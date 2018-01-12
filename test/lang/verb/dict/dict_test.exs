@@ -24,6 +24,14 @@ defmodule JpKatsuyouTest.Verb.Dict do
     test "dic_past/1 returns the past form of a verb" do
       assert Verb.dic_past(%{kumi: "ichidan", verb: "食べる"}) == "食べた"
       assert Verb.dic_past(%{kumi: "godan", verb: "話す"}) == "話した"
+      assert Verb.dic_past(%{kumi: "godan", verb: "書く"}) == "書いた"
+      assert Verb.dic_past(%{kumi: "godan", verb: "泳ぐ"}) == "泳ぎたい"
+      assert Verb.dic_past(%{kumi: "godan", verb: "飲む"}) == "飲んだ"
+      assert Verb.dic_past(%{kumi: "godan", verb: "死ぬ"}) == "死んだ"
+      assert Verb.dic_past(%{kumi: "godan", verb: "遊ぶ"}) == "遊んだ"
+      assert Verb.dic_past(%{kumi: "godan", verb: "切る"}) == "切った"
+      assert Verb.dic_past(%{kumi: "godan", verb: "持つ"}) == "待った"
+      assert Verb.dic_past(%{kumi: "godan", verb: "買う"}) == "買った"
       assert Verb.dic_past(%{kumi: "irregular", verb: "する"}) == "した"
       assert Verb.dic_past(%{kumi: "irregular", verb: "来る"}) == "来た"
     end
