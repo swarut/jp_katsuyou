@@ -42,6 +42,30 @@ defmodule JpKatsuyou.Verb.Dict do
         |> String.replace_suffix("る", "た")
       end
       def dic_past(%{kumi: "godan", verb: verb}) do
+        case String.last(verb) do
+          "す" ->
+            verb
+            |> Lang.shift_suffix(:i)
+            |> String.replace_suffix("", "た")
+          "く" ->
+            verb |> String.replace_suffix("く", "いた")
+          "ぐ" ->
+            verb |> String.replace_suffix("く", "いだ")
+          "む" ->
+            verb |> String.replace_suffix("む", "んだ")
+          "ぬ" ->
+            verb |> String.replace_suffix("ぬ", "んだ")
+          "ぶ" ->
+            verb |> String.replace_suffix("ぶ", "んだ")
+          "る" ->
+            verb |> String.replace_suffix("る", "った")
+          "つ" ->
+            verb |> String.replace_suffix("つ", "った")
+          "う" ->
+            verb |> String.replace_suffix("う", "った")
+        end
+
+
         verb
         |> Lang.shift_suffix(:i)
         |> String.replace_suffix("", "た")
