@@ -50,7 +50,7 @@ defmodule JpKatsuyou.Verb.Dict do
           "く" ->
             verb |> String.replace_suffix("く", "いた")
           "ぐ" ->
-            verb |> String.replace_suffix("く", "いだ")
+            verb |> String.replace_suffix("ぐ", "いだ")
           "む" ->
             verb |> String.replace_suffix("む", "んだ")
           "ぬ" ->
@@ -64,11 +64,6 @@ defmodule JpKatsuyou.Verb.Dict do
           "う" ->
             verb |> String.replace_suffix("う", "った")
         end
-
-
-        verb
-        |> Lang.shift_suffix(:i)
-        |> String.replace_suffix("", "た")
       end
       def dic_past(%{kumi: "irregular", verb: verb}) do
         case verb do

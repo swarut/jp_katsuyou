@@ -30,7 +30,7 @@ defmodule JpKatsuyouTest.Verb.Dict do
       assert Verb.dic_past(%{kumi: "godan", verb: "死ぬ"}) == "死んだ"
       assert Verb.dic_past(%{kumi: "godan", verb: "遊ぶ"}) == "遊んだ"
       assert Verb.dic_past(%{kumi: "godan", verb: "切る"}) == "切った"
-      assert Verb.dic_past(%{kumi: "godan", verb: "持つ"}) == "待った"
+      assert Verb.dic_past(%{kumi: "godan", verb: "持つ"}) == "持った"
       assert Verb.dic_past(%{kumi: "godan", verb: "買う"}) == "買った"
       assert Verb.dic_past(%{kumi: "irregular", verb: "する"}) == "した"
       assert Verb.dic_past(%{kumi: "irregular", verb: "来る"}) == "来た"
