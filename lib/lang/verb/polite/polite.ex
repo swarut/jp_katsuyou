@@ -20,6 +20,10 @@ defmodule JpKatsuyou.Verb.Polite do
           "来る" -> "来ました"
         end
       end
+      def polite_past_negative(%{kumi: kumi, verb: verb} = verb_item) do
+        polite_past(verb_item)
+        |> String.replace_suffix("した", "せんでした")
+      end
 
       def polite_present(%{kumi: "ichidan", verb: verb}) do
         verb
