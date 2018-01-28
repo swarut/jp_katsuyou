@@ -72,6 +72,7 @@ defmodule JpKatsuyou.Verb do
       ],
       polite: [
         "past",
+        "past_negative",
         "present",
         "order"
       ]

@@ -6,13 +6,19 @@ defmodule JpKatsuyou.Verb.Polite do
     quote do
 
       def polite_past(%{kumi: "ichidan", verb: verb}) do
-        IO.puts("polite past #{verb}")
+        verb
+        |> String.replace_suffix("る", "ました")
       end
       def polite_past(%{kumi: "godan", verb: verb}) do
-        IO.puts("polite past #{verb}")
+        verb
+        |> Lang.shift_suffix(:i)
+        |> String.replace_suffix("", "ました")
       end
       def polite_past(%{kumi: "irregular", verb: verb}) do
-        IO.puts("polite past #{verb}")
+        case verb do
+          "する" -> "しました"
+          "来る" -> "来ました"
+        end
       end
 
       def polite_present(%{kumi: "ichidan", verb: verb}) do

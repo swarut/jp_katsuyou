@@ -4,6 +4,13 @@ defmodule JpKatsuyouTest.Verb.Polite do
 
   describe "Polite" do
 
+    test "polite_past/2 returns correct polite past conjugation" do
+      assert Verb.polite_past(%{kumi: "ichidan", verb: "食べる"}) == "食べました"
+      assert Verb.polite_past(%{kumi: "godan", verb: "話す"}) == "話しました"
+      assert Verb.polite_past(%{kumi: "irregular", verb: "する"}) == "しました"
+      assert Verb.polite_past(%{kumi: "irregular", verb: "来る"}) == "来ました"
+    end
+
     test "polite_present/2 returns correct polite present conjugation" do
       assert Verb.polite_present(%{kumi: "ichidan", verb: "食べる"}) == "食べます"
       assert Verb.polite_present(%{kumi: "godan", verb: "話す"}) == "話します"
