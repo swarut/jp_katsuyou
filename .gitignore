@@ -6,5 +6,5 @@ erl_crash.dump
 *.beam
 mix.lock
 /doc
-
+.DS_Store
 .elixir_ls/
