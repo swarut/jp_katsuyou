@@ -4,8 +4,10 @@ defmodule JpKatsuyou.Verb do
 
   """
 
-  use JpKatsuyou.Verb.Dict
-  use JpKatsuyou.Verb.Polite
+  # use JpKatsuyou.Verb.Dict
+  # use JpKatsuyou.Verb.Polite
+  import JpKatsuyou.Verb.Dict
+  import JpKatsuyou.Verb.Polite
 
   @special_godan_lookup %{
     "走る" => true,
