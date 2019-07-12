@@ -4,7 +4,6 @@ defmodule JpKatsuyou.Lang do
 
   """
 
-
   @hira_rows %{
     あ: [{:a, "あ"}, {:i, "い"}, {:u, "う"}, {:e, "え"}, {:o, "お"}],
     か: [{:a, "か"}, {:i, "き"}, {:u, "く"}, {:e, "け"}, {:o, "こ"}],
@@ -84,7 +83,5 @@ defmodule JpKatsuyou.Lang do
   def shift_suffix_and_change_row(word, to, row) do
 
   end
-
-
 
 end
