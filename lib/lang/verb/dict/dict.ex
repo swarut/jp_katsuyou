@@ -69,11 +69,9 @@ defmodule JpKatsuyou.Verb.Dict do
     end
   end
 
-  def dic_past_negative(%{kumi: "ichidan", verb: verb}) do
-  end
-  def dic_past_negative(%{kumi: "godan", verb: verb}) do
-  end
-  def dic_past_negative(%{kumi: "irregular", verb: verb}) do
+  def dic_past_negative(%{kumi: _kumi, verb: _verb} = verb_item) do
+    dic_present_negative(verb_item)
+    |> String.replace_suffix("い", "かった")
   end
 
   def dic_order(%{kumi: "ichidan", verb: verb}) do

@@ -36,6 +36,21 @@ defmodule JpKatsuyouTest.Verb.Dict do
       assert Dict.dic_past(%{kumi: "irregular", verb: "来る"}) == "来た"
     end
 
+    test "dic_past_negative/1 returns the past negative form of a verb" do
+      assert Dict.dic_past_negative(%{kumi: "ichidan", verb: "食べる"}) == "食べなかった"
+      assert Dict.dic_past_negative(%{kumi: "godan", verb: "話す"}) == "話さなかった"
+      assert Dict.dic_past_negative(%{kumi: "godan", verb: "書く"}) == "書かなかった"
+      assert Dict.dic_past_negative(%{kumi: "godan", verb: "泳ぐ"}) == "泳がなかった"
+      assert Dict.dic_past_negative(%{kumi: "godan", verb: "飲む"}) == "飲まなかった"
+      assert Dict.dic_past_negative(%{kumi: "godan", verb: "死ぬ"}) == "死ななかった"
+      assert Dict.dic_past_negative(%{kumi: "godan", verb: "遊ぶ"}) == "遊ばなかった"
+      assert Dict.dic_past_negative(%{kumi: "godan", verb: "切る"}) == "切らなかった"
+      assert Dict.dic_past_negative(%{kumi: "godan", verb: "持つ"}) == "持たなかった"
+      assert Dict.dic_past_negative(%{kumi: "godan", verb: "買う"}) == "買わなかった"
+      assert Dict.dic_past_negative(%{kumi: "irregular", verb: "する"}) == "しなかった"
+      assert Dict.dic_past_negative(%{kumi: "irregular", verb: "来る"}) == "来なかった"
+    end
+
     test "dic_order/1 returns order form of a verb" do
       assert Dict.dic_order(%{kumi: "ichidan", verb: "食べる"}) == "食べろ"
       assert Dict.dic_order(%{kumi: "godan", verb: "話す"}) == "話せ"
